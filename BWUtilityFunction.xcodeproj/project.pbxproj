@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		212F51BF1D40AD51001CBA91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 212F51BE1D40AD51001CBA91 /* main.m */; };
 		212F51C21D40AD51001CBA91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 212F51C11D40AD51001CBA91 /* AppDelegate.m */; };
-		212F51C51D40AD51001CBA91 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212F51C41D40AD51001CBA91 /* ViewController.m */; };
 		212F51C81D40AD51001CBA91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212F51C61D40AD51001CBA91 /* Main.storyboard */; };
 		212F51CA1D40AD51001CBA91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 212F51C91D40AD51001CBA91 /* Assets.xcassets */; };
 		212F51CD1D40AD51001CBA91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212F51CB1D40AD51001CBA91 /* LaunchScreen.storyboard */; };
 		212F51D81D40AD51001CBA91 /* BWUtilityFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 212F51D71D40AD51001CBA91 /* BWUtilityFunctionTests.m */; };
 		212F51E31D40AD51001CBA91 /* BWUtilityFunctionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 212F51E21D40AD51001CBA91 /* BWUtilityFunctionUITests.m */; };
+		54E4C6EA20B4D9C2F8F907EB /* libPods-BWUtilityFunction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276618FD6F979ED531B922F /* libPods-BWUtilityFunction.a */; };
+		B45C5BB61D51DA27006BD33A /* BWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BB31D51DA27006BD33A /* BWBaseViewController.m */; };
+		B45C5BB91D51DA37006BD33A /* BWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BB81D51DA37006BD33A /* BWHomeViewController.m */; };
+		B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */; };
+		B47CC0911D51E8A50062C107 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B47CC0931D51E8A50062C107 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0276618FD6F979ED531B922F /* libPods-BWUtilityFunction.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BWUtilityFunction.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		212F51BA1D40AD51001CBA91 /* BWUtilityFunction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWUtilityFunction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		212F51BE1D40AD51001CBA91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		212F51C01D40AD51001CBA91 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		212F51C11D40AD51001CBA91 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		212F51C31D40AD51001CBA91 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		212F51C41D40AD51001CBA91 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		212F51C71D40AD51001CBA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		212F51C91D40AD51001CBA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		212F51CC1D40AD51001CBA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,18 @@
 		212F51DE1D40AD51001CBA91 /* BWUtilityFunctionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BWUtilityFunctionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		212F51E21D40AD51001CBA91 /* BWUtilityFunctionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BWUtilityFunctionUITests.m; sourceTree = "<group>"; };
 		212F51E41D40AD51001CBA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D31DEDB7DCCF82A40AD8AB2 /* Pods-BWUtilityFunction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWUtilityFunction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BWUtilityFunction/Pods-BWUtilityFunction.debug.xcconfig"; sourceTree = "<group>"; };
+		82BD289F0F2B7540C67F8639 /* Pods-BWUtilityFunction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWUtilityFunction.release.xcconfig"; path = "Pods/Target Support Files/Pods-BWUtilityFunction/Pods-BWUtilityFunction.release.xcconfig"; sourceTree = "<group>"; };
+		B45C5BB21D51DA27006BD33A /* BWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWBaseViewController.h; sourceTree = "<group>"; };
+		B45C5BB31D51DA27006BD33A /* BWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWBaseViewController.m; sourceTree = "<group>"; };
+		B45C5BB71D51DA37006BD33A /* BWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHomeViewController.h; sourceTree = "<group>"; };
+		B45C5BB81D51DA37006BD33A /* BWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHomeViewController.m; sourceTree = "<group>"; };
+		B45C5BBA1D51DA69006BD33A /* BWLocalizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLocalizeViewController.h; sourceTree = "<group>"; };
+		B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLocalizeViewController.m; sourceTree = "<group>"; };
+		B47CC08B1D51E3700062C107 /* BWUtilityFunction.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BWUtilityFunction.pch; sourceTree = "<group>"; };
+		B47CC08C1D51E5480062C107 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		B47CC0941D51E8A80062C107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B47CC0951D51E8A90062C107 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E4C6EA20B4D9C2F8F907EB /* libPods-BWUtilityFunction.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +101,8 @@
 				212F51D61D40AD51001CBA91 /* BWUtilityFunctionTests */,
 				212F51E11D40AD51001CBA91 /* BWUtilityFunctionUITests */,
 				212F51BB1D40AD51001CBA91 /* Products */,
+				AE89D42C40312468EB4BB815 /* Pods */,
+				2301F7649593485C6E2094AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +119,13 @@
 		212F51BC1D40AD51001CBA91 /* BWUtilityFunction */ = {
 			isa = PBXGroup;
 			children = (
+				B47CC08C1D51E5480062C107 /* README.md */,
 				212F51C01D40AD51001CBA91 /* AppDelegate.h */,
 				212F51C11D40AD51001CBA91 /* AppDelegate.m */,
-				212F51C31D40AD51001CBA91 /* ViewController.h */,
-				212F51C41D40AD51001CBA91 /* ViewController.m */,
 				212F51C61D40AD51001CBA91 /* Main.storyboard */,
+				B45C5BAD1D51D99A006BD33A /* ViewController */,
+				B45C5BAA1D51D99A006BD33A /* Resource */,
 				212F51C91D40AD51001CBA91 /* Assets.xcassets */,
-				212F51CB1D40AD51001CBA91 /* LaunchScreen.storyboard */,
-				212F51CE1D40AD51001CBA91 /* Info.plist */,
 				212F51BD1D40AD51001CBA91 /* Supporting Files */,
 			);
 			path = BWUtilityFunction;
@@ -118,6 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				212F51BE1D40AD51001CBA91 /* main.m */,
+				212F51CE1D40AD51001CBA91 /* Info.plist */,
+				B47CC08B1D51E3700062C107 /* BWUtilityFunction.pch */,
+				212F51CB1D40AD51001CBA91 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +160,84 @@
 			path = BWUtilityFunctionUITests;
 			sourceTree = "<group>";
 		};
+		2301F7649593485C6E2094AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0276618FD6F979ED531B922F /* libPods-BWUtilityFunction.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE89D42C40312468EB4BB815 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D31DEDB7DCCF82A40AD8AB2 /* Pods-BWUtilityFunction.debug.xcconfig */,
+				82BD289F0F2B7540C67F8639 /* Pods-BWUtilityFunction.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B45C5BAA1D51D99A006BD33A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B45C5BAB1D51D99A006BD33A /* Image */,
+				B45C5BBF1D51DEC7006BD33A /* Localization */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B45C5BAB1D51D99A006BD33A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		B45C5BAD1D51D99A006BD33A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B45C5BB11D51DA27006BD33A /* BaseViewController */,
+				B45C5BB41D51DA27006BD33A /* Home */,
+				B45C5BB51D51DA27006BD33A /* Internationalization */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B45C5BB11D51DA27006BD33A /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B45C5BB21D51DA27006BD33A /* BWBaseViewController.h */,
+				B45C5BB31D51DA27006BD33A /* BWBaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		B45C5BB41D51DA27006BD33A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B45C5BB71D51DA37006BD33A /* BWHomeViewController.h */,
+				B45C5BB81D51DA37006BD33A /* BWHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B45C5BB51D51DA27006BD33A /* Internationalization */ = {
+			isa = PBXGroup;
+			children = (
+				B45C5BBA1D51DA69006BD33A /* BWLocalizeViewController.h */,
+				B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */,
+			);
+			path = Internationalization;
+			sourceTree = "<group>";
+		};
+		B45C5BBF1D51DEC7006BD33A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B47CC0931D51E8A50062C107 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 212F51E71D40AD51001CBA91 /* Build configuration list for PBXNativeTarget "BWUtilityFunction" */;
 			buildPhases = (
+				3254C87612A00C5AB3815C99 /* [CP] Check Pods Manifest.lock */,
 				212F51B61D40AD51001CBA91 /* Sources */,
 				212F51B71D40AD51001CBA91 /* Frameworks */,
 				212F51B81D40AD51001CBA91 /* Resources */,
+				C398EEE9AB960B9078BD018C /* [CP] Embed Pods Frameworks */,
+				1A0181AF18766E43B99DDB6A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,6 +326,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 212F51B11D40AD51001CBA91;
 			productRefGroup = 212F51BB1D40AD51001CBA91 /* Products */;
@@ -243,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B47CC0911D51E8A50062C107 /* Localizable.strings in Resources */,
 				212F51CD1D40AD51001CBA91 /* LaunchScreen.storyboard in Resources */,
 				212F51CA1D40AD51001CBA91 /* Assets.xcassets in Resources */,
 				212F51C81D40AD51001CBA91 /* Main.storyboard in Resources */,
@@ -265,14 +368,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A0181AF18766E43B99DDB6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BWUtilityFunction/Pods-BWUtilityFunction-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3254C87612A00C5AB3815C99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C398EEE9AB960B9078BD018C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BWUtilityFunction/Pods-BWUtilityFunction-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		212F51B61D40AD51001CBA91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				212F51C51D40AD51001CBA91 /* ViewController.m in Sources */,
 				212F51C21D40AD51001CBA91 /* AppDelegate.m in Sources */,
 				212F51BF1D40AD51001CBA91 /* main.m in Sources */,
+				B45C5BB91D51DA37006BD33A /* BWHomeViewController.m in Sources */,
+				B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */,
+				B45C5BB61D51DA27006BD33A /* BWBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +475,15 @@
 				212F51CC1D40AD51001CBA91 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B47CC0931D51E8A50062C107 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B47CC0941D51E8A80062C107 /* en */,
+				B47CC0951D51E8A90062C107 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -411,9 +573,12 @@
 		};
 		212F51E81D40AD51001CBA91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D31DEDB7DCCF82A40AD8AB2 /* Pods-BWUtilityFunction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = BWUtilityFunction/BWUtilityFunction.pch;
 				INFOPLIST_FILE = BWUtilityFunction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bws.BWUtilityFunction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,9 +587,12 @@
 		};
 		212F51E91D40AD51001CBA91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82BD289F0F2B7540C67F8639 /* Pods-BWUtilityFunction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = BWUtilityFunction/BWUtilityFunction.pch;
 				INFOPLIST_FILE = BWUtilityFunction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bws.BWUtilityFunction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +664,7 @@
 				212F51E91D40AD51001CBA91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		212F51EA1D40AD51001CBA91 /* Build configuration list for PBXNativeTarget "BWUtilityFunctionTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +673,7 @@
 				212F51EC1D40AD51001CBA91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		212F51ED1D40AD51001CBA91 /* Build configuration list for PBXNativeTarget "BWUtilityFunctionUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +682,7 @@
 				212F51EF1D40AD51001CBA91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
