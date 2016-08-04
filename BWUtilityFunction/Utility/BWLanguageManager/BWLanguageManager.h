@@ -10,6 +10,7 @@
 
 @interface BWLanguageManager : NSObject
 
-+ (NSString *)keyWithErrorCode:(NSString *)errorCode;
++ (BOOL)isSimpleChinese;    ///< 是否为简体中文
++ (NSString *)keyWithErrorCode:(NSString *)errorCode;   ///< 根据ErrorCode获得对应的Key
 
 @end

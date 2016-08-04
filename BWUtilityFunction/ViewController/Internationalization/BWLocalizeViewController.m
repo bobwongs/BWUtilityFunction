@@ -9,7 +9,10 @@
 #import "BWLocalizeViewController.h"
 #import "BWLocalizeView.h"
 
-@interface BWLocalizeViewController ()
+#define kTitleCN BWLocalizedString(@"中文")
+#define kTitleEN BWLocalizedString(@"英文")
+
+@interface BWLocalizeViewController () <UIActionSheetDelegate>
 
 @end
 
@@ -21,6 +24,16 @@
     self.title = @"Localization";
     
     [self setUI];
+    
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *languages = [userDefaults objectForKey:@"AppleLanguages"];
+    NSString *current = languages.firstObject;
+    
+    NSLog(@"curren languages is %@", current);
+    
+    [userDefaults setObject:@[@"en-US"] forKey:@"AppleLanguages"];
+    [userDefaults synchronize];
 }
 
 - (void)setUI {
@@ -72,6 +85,35 @@
         make.top.mas_equalTo(imageView0.mas_bottom).offset(10);
         make.height.mas_equalTo(150);
     }];
+    
+    
+    /*=======================
+        应用内语言切换
+        语言
+            en-US、zh-Hans
+     ======================*/
+    UIButton *btnSelectLang = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnSelectLang setTitle:NSLocalizedString(@"选择", nil) forState:UIControlStateNormal];
+    [btnSelectLang addTarget:self action:@selector(btnActSelectLang:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnSelectLang];
+}
+
+- (void)btnActSelectLang:(UIButton *)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"语言选择", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"取消", nil) destructiveButtonTitle:nil otherButtonTitles:kTitleCN, kTitleEN, nil];
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:kTitleCN]) {
+        
+    }
+    else if ([title isEqualToString:kTitleEN]) {
+        
+    }
+    
+    // 退回去，再进来，重新加载资源
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

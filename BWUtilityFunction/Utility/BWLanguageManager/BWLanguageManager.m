@@ -12,6 +12,17 @@
 
 NSString *const kTextUnknownError = @"未知错误!";
 
++ (BOOL)isSimpleChinese
+{
+    NSString *language = [[NSLocale preferredLanguages] firstObject];
+    if ([language hasPrefix:@"zh-Hans"]) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
 + (NSString *)keyWithErrorCode:(NSString *)errorCode {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"BWLanguageConfig" ofType:@"plist"];
     NSDictionary *dictConfig = [NSDictionary dictionaryWithContentsOfFile:path];
