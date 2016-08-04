@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ErrorCode</key>
+	<dict>
+		<key>10001</key>
+		<string>账号不存在</string>
+		<key>10002</key>
+		<string>密码错误</string>
+	</dict>
+</dict>
+</plist>

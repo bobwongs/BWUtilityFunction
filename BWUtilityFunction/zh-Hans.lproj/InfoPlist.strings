@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  BWUtilityFunction
+
+  Created by BobWong on 16/8/4.
+  Copyright © 2016年 Bob Wong Studio. All rights reserved.
+*/
+
+CFBundleDisplayName = "BW实用功能";

@@ -15,6 +15,12 @@
 		212F51D81D40AD51001CBA91 /* BWUtilityFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 212F51D71D40AD51001CBA91 /* BWUtilityFunctionTests.m */; };
 		212F51E31D40AD51001CBA91 /* BWUtilityFunctionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 212F51E21D40AD51001CBA91 /* BWUtilityFunctionUITests.m */; };
 		54E4C6EA20B4D9C2F8F907EB /* libPods-BWUtilityFunction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0276618FD6F979ED531B922F /* libPods-BWUtilityFunction.a */; };
+		B45998D61D52DA760047B58A /* image0.png in Resources */ = {isa = PBXBuildFile; fileRef = B45998D81D52DA760047B58A /* image0.png */; };
+		B45998F71D52E8890047B58A /* BWLocalizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B45998F01D52E8890047B58A /* BWLocalizeView.xib */; };
+		B45998F81D52E8890047B58A /* BWLocalizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B45998F31D52E8890047B58A /* BWLocalizeView.m */; };
+		B45999031D5322F70047B58A /* BWLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B45999021D5322F70047B58A /* BWLanguageManager.m */; };
+		B45999051D53235E0047B58A /* BWLanguageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B45999041D53235E0047B58A /* BWLanguageConfig.plist */; };
+		B459990F1D5329270047B58A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B45999111D5329270047B58A /* InfoPlist.strings */; };
 		B45C5BB61D51DA27006BD33A /* BWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BB31D51DA27006BD33A /* BWBaseViewController.m */; };
 		B45C5BB91D51DA37006BD33A /* BWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BB81D51DA37006BD33A /* BWHomeViewController.m */; };
 		B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */; };
@@ -47,7 +53,6 @@
 		212F51C71D40AD51001CBA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		212F51C91D40AD51001CBA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		212F51CC1D40AD51001CBA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		212F51CE1D40AD51001CBA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		212F51D31D40AD51001CBA91 /* BWUtilityFunctionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BWUtilityFunctionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		212F51D71D40AD51001CBA91 /* BWUtilityFunctionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BWUtilityFunctionTests.m; sourceTree = "<group>"; };
 		212F51D91D40AD51001CBA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +61,20 @@
 		212F51E41D40AD51001CBA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D31DEDB7DCCF82A40AD8AB2 /* Pods-BWUtilityFunction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWUtilityFunction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BWUtilityFunction/Pods-BWUtilityFunction.debug.xcconfig"; sourceTree = "<group>"; };
 		82BD289F0F2B7540C67F8639 /* Pods-BWUtilityFunction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWUtilityFunction.release.xcconfig"; path = "Pods/Target Support Files/Pods-BWUtilityFunction/Pods-BWUtilityFunction.release.xcconfig"; sourceTree = "<group>"; };
+		B45998D71D52DA760047B58A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/image0.png"; sourceTree = "<group>"; };
+		B45998D91D52DA790047B58A /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/image0.png; sourceTree = "<group>"; };
+		B45998F11D52E8890047B58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BWLocalizeView.xib; sourceTree = "<group>"; };
+		B45998F21D52E8890047B58A /* BWLocalizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLocalizeView.h; sourceTree = "<group>"; };
+		B45998F31D52E8890047B58A /* BWLocalizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLocalizeView.m; sourceTree = "<group>"; };
+		B45998FA1D52E9410047B58A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BWLocalizeView.strings; sourceTree = "<group>"; };
+		B45998FB1D52E9440047B58A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BWLocalizeView.strings"; sourceTree = "<group>"; };
+		B45998FC1D5315450047B58A /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = SOURCE_ROOT; };
+		B45999011D5322F70047B58A /* BWLanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLanguageManager.h; sourceTree = "<group>"; };
+		B45999021D5322F70047B58A /* BWLanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLanguageManager.m; sourceTree = "<group>"; };
+		B45999041D53235E0047B58A /* BWLanguageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BWLanguageConfig.plist; sourceTree = "<group>"; };
+		B459990C1D5328850047B58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		B45999101D5329270047B58A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		B45999121D5329280047B58A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B45C5BB21D51DA27006BD33A /* BWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWBaseViewController.h; sourceTree = "<group>"; };
 		B45C5BB31D51DA27006BD33A /* BWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWBaseViewController.m; sourceTree = "<group>"; };
 		B45C5BB71D51DA37006BD33A /* BWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHomeViewController.h; sourceTree = "<group>"; };
@@ -124,6 +143,7 @@
 				212F51C11D40AD51001CBA91 /* AppDelegate.m */,
 				212F51C61D40AD51001CBA91 /* Main.storyboard */,
 				B45C5BAD1D51D99A006BD33A /* ViewController */,
+				B45998FF1D5322DE0047B58A /* Utility */,
 				B45C5BAA1D51D99A006BD33A /* Resource */,
 				212F51C91D40AD51001CBA91 /* Assets.xcassets */,
 				212F51BD1D40AD51001CBA91 /* Supporting Files */,
@@ -135,9 +155,11 @@
 			isa = PBXGroup;
 			children = (
 				212F51BE1D40AD51001CBA91 /* main.m */,
-				212F51CE1D40AD51001CBA91 /* Info.plist */,
+				B45999071D5327DC0047B58A /* Info.plist */,
+				B45999111D5329270047B58A /* InfoPlist.strings */,
 				B47CC08B1D51E3700062C107 /* BWUtilityFunction.pch */,
 				212F51CB1D40AD51001CBA91 /* LaunchScreen.storyboard */,
+				B45998FC1D5315450047B58A /* AutoGenStrings.py */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,6 +199,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B45998EF1D52E8890047B58A /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				B45998F21D52E8890047B58A /* BWLocalizeView.h */,
+				B45998F31D52E8890047B58A /* BWLocalizeView.m */,
+				B45998F01D52E8890047B58A /* BWLocalizeView.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		B45998FF1D5322DE0047B58A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B45999001D5322DE0047B58A /* BWLanguageManager */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B45999001D5322DE0047B58A /* BWLanguageManager */ = {
+			isa = PBXGroup;
+			children = (
+				B45999011D5322F70047B58A /* BWLanguageManager.h */,
+				B45999021D5322F70047B58A /* BWLanguageManager.m */,
+				B45999041D53235E0047B58A /* BWLanguageConfig.plist */,
+			);
+			path = BWLanguageManager;
+			sourceTree = "<group>";
+		};
 		B45C5BAA1D51D99A006BD33A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +239,7 @@
 		B45C5BAB1D51D99A006BD33A /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B45998D81D52DA760047B58A /* image0.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -226,6 +277,7 @@
 			children = (
 				B45C5BBA1D51DA69006BD33A /* BWLocalizeViewController.h */,
 				B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */,
+				B45998EF1D52E8890047B58A /* Xib */,
 			);
 			path = Internationalization;
 			sourceTree = "<group>";
@@ -346,8 +398,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47CC0911D51E8A50062C107 /* Localizable.strings in Resources */,
+				B459990F1D5329270047B58A /* InfoPlist.strings in Resources */,
+				B45999051D53235E0047B58A /* BWLanguageConfig.plist in Resources */,
+				B45998D61D52DA760047B58A /* image0.png in Resources */,
 				212F51CD1D40AD51001CBA91 /* LaunchScreen.storyboard in Resources */,
 				212F51CA1D40AD51001CBA91 /* Assets.xcassets in Resources */,
+				B45998F71D52E8890047B58A /* BWLocalizeView.xib in Resources */,
 				212F51C81D40AD51001CBA91 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +480,9 @@
 				212F51C21D40AD51001CBA91 /* AppDelegate.m in Sources */,
 				212F51BF1D40AD51001CBA91 /* main.m in Sources */,
 				B45C5BB91D51DA37006BD33A /* BWHomeViewController.m in Sources */,
+				B45999031D5322F70047B58A /* BWLanguageManager.m in Sources */,
 				B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */,
+				B45998F81D52E8890047B58A /* BWLocalizeView.m in Sources */,
 				B45C5BB61D51DA27006BD33A /* BWBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +533,42 @@
 				212F51CC1D40AD51001CBA91 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B45998D81D52DA760047B58A /* image0.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B45998D71D52DA760047B58A /* zh-Hans */,
+				B45998D91D52DA790047B58A /* en */,
+			);
+			name = image0.png;
+			sourceTree = "<group>";
+		};
+		B45998F01D52E8890047B58A /* BWLocalizeView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B45998F11D52E8890047B58A /* Base */,
+				B45998FA1D52E9410047B58A /* en */,
+				B45998FB1D52E9440047B58A /* zh-Hans */,
+			);
+			name = BWLocalizeView.xib;
+			sourceTree = "<group>";
+		};
+		B45999071D5327DC0047B58A /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B459990C1D5328850047B58A /* Base */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		B45999111D5329270047B58A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B45999101D5329270047B58A /* zh-Hans */,
+				B45999121D5329280047B58A /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		B47CC0931D51E8A50062C107 /* Localizable.strings */ = {

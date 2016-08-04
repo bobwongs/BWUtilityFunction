@@ -1,0 +1,23 @@
+
+/* Class = "UILabel"; text = "姓名："; ObjectID = "0fS-tR-6t4"; */
+"0fS-tR-6t4.text" = "Name:";
+
+/* Class = "UIButton"; normalTitle = "确定"; ObjectID = "X5o-AE-kAf"; */
+"X5o-AE-kAf.normalTitle" = "Confirm";
+
+/* Class = "UITextField"; placeholder = "输入姓名"; ObjectID = "hGs-wr-beI"; */
+"hGs-wr-beI.placeholder" = "Input Name";
+
+//##################################################################################
+//#           AutoGenStrings            2016-08-04 14:40:25
+//##################################################################################
+
+/* Class = "UILabel"; text = "性别："; ObjectID = "YIi-Lf-llb"; */
+"YIi-Lf-llb.text" = "Sex:";
+
+//##################################################################################
+//#           AutoGenStrings            2016-08-04 14:54:48
+//##################################################################################
+
+/* Class = "UITextField"; placeholder = "输入性别"; ObjectID = "wCx-J3-gX6"; */
+"wCx-J3-gX6.placeholder" = "Input Sex";
