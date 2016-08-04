@@ -21,6 +21,8 @@
 		B45999031D5322F70047B58A /* BWLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B45999021D5322F70047B58A /* BWLanguageManager.m */; };
 		B45999051D53235E0047B58A /* BWLanguageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B45999041D53235E0047B58A /* BWLanguageConfig.plist */; };
 		B459990F1D5329270047B58A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B45999111D5329270047B58A /* InfoPlist.strings */; };
+		B45999171D535E3B0047B58A /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = B45999161D535E3B0047B58A /* Language.m */; };
+		B459991A1D535E510047B58A /* FGLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B45999191D535E510047B58A /* FGLanguageTool.m */; };
 		B45C5BB61D51DA27006BD33A /* BWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BB31D51DA27006BD33A /* BWBaseViewController.m */; };
 		B45C5BB91D51DA37006BD33A /* BWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BB81D51DA37006BD33A /* BWHomeViewController.m */; };
 		B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */; };
@@ -75,6 +77,10 @@
 		B459990C1D5328850047B58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		B45999101D5329270047B58A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B45999121D5329280047B58A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B45999151D535E3B0047B58A /* Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
+		B45999161D535E3B0047B58A /* Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
+		B45999181D535E510047B58A /* FGLanguageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLanguageTool.h; sourceTree = "<group>"; };
+		B45999191D535E510047B58A /* FGLanguageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLanguageTool.m; sourceTree = "<group>"; };
 		B45C5BB21D51DA27006BD33A /* BWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWBaseViewController.h; sourceTree = "<group>"; };
 		B45C5BB31D51DA27006BD33A /* BWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWBaseViewController.m; sourceTree = "<group>"; };
 		B45C5BB71D51DA37006BD33A /* BWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHomeViewController.h; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				B45C5BAD1D51D99A006BD33A /* ViewController */,
 				B45998FF1D5322DE0047B58A /* Utility */,
 				B45C5BAA1D51D99A006BD33A /* Resource */,
+				B45999131D535DF70047B58A /* Reference */,
 				212F51C91D40AD51001CBA91 /* Assets.xcassets */,
 				212F51BD1D40AD51001CBA91 /* Supporting Files */,
 			);
@@ -225,6 +232,25 @@
 				B45999041D53235E0047B58A /* BWLanguageConfig.plist */,
 			);
 			path = BWLanguageManager;
+			sourceTree = "<group>";
+		};
+		B45999131D535DF70047B58A /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				B45999141D535DF70047B58A /* Internationalization */,
+			);
+			path = Reference;
+			sourceTree = "<group>";
+		};
+		B45999141D535DF70047B58A /* Internationalization */ = {
+			isa = PBXGroup;
+			children = (
+				B45999151D535E3B0047B58A /* Language.h */,
+				B45999161D535E3B0047B58A /* Language.m */,
+				B45999181D535E510047B58A /* FGLanguageTool.h */,
+				B45999191D535E510047B58A /* FGLanguageTool.m */,
+			);
+			path = Internationalization;
 			sourceTree = "<group>";
 		};
 		B45C5BAA1D51D99A006BD33A /* Resource */ = {
@@ -478,8 +504,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				212F51C21D40AD51001CBA91 /* AppDelegate.m in Sources */,
+				B45999171D535E3B0047B58A /* Language.m in Sources */,
 				212F51BF1D40AD51001CBA91 /* main.m in Sources */,
 				B45C5BB91D51DA37006BD33A /* BWHomeViewController.m in Sources */,
+				B459991A1D535E510047B58A /* FGLanguageTool.m in Sources */,
 				B45999031D5322F70047B58A /* BWLanguageManager.m in Sources */,
 				B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */,
 				B45998F81D52E8890047B58A /* BWLocalizeView.m in Sources */,

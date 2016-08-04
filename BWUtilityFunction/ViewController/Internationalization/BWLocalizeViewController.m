@@ -11,6 +11,7 @@
 
 #define kTitleCN BWLocalizedString(@"中文")
 #define kTitleEN BWLocalizedString(@"英文")
+#define kTitleCancel BWLocalizedString(@"取消")
 
 @interface BWLocalizeViewController () <UIActionSheetDelegate>
 
@@ -24,16 +25,6 @@
     self.title = @"Localization";
     
     [self setUI];
-    
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *languages = [userDefaults objectForKey:@"AppleLanguages"];
-    NSString *current = languages.firstObject;
-    
-    NSLog(@"curren languages is %@", current);
-    
-    [userDefaults setObject:@[@"en-US"] forKey:@"AppleLanguages"];
-    [userDefaults synchronize];
 }
 
 - (void)setUI {
@@ -90,12 +81,18 @@
     /*=======================
         应用内语言切换
         语言
-            en-US、zh-Hans
+            en、zh-Hans
      ======================*/
-    UIButton *btnSelectLang = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *btnSelectLang = [UIButton buttonWithType:UIButtonTypeSystem];
     [btnSelectLang setTitle:NSLocalizedString(@"选择", nil) forState:UIControlStateNormal];
     [btnSelectLang addTarget:self action:@selector(btnActSelectLang:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnSelectLang];
+    
+    [btnSelectLang mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(viewLocalize.mas_bottom).offset(20);
+        make.height.mas_equalTo(44);
+    }];
 }
 
 - (void)btnActSelectLang:(UIButton *)sender {
@@ -105,15 +102,44 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([title isEqualToString:kTitleCN]) {
-        
-    }
-    else if ([title isEqualToString:kTitleEN]) {
-        
+    if ([title isEqualToString:kTitleCancel]) {
+        return ;
     }
     
-    // 退回去，再进来，重新加载资源
-    [self.navigationController popViewControllerAnimated:YES];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    void (^blockShowCurrLang)() = ^ {
+        NSArray *languages = [userDefaults objectForKey:@"AppleLanguages"];
+        NSString *current = languages.firstObject;
+        NSLog(@"current languages is %@", current);
+    };
+    blockShowCurrLang();
+    
+    NSArray *languages = [userDefaults objectForKey:@"AppleLanguages"];
+    NSString *current = languages.firstObject;
+    NSString *langToSet;
+    
+    
+    if ([title isEqualToString:kTitleCN]) {
+        langToSet = @"zh-Hans";
+    }
+    else if ([title isEqualToString:kTitleEN]) {
+        langToSet = @"en";
+    }
+    
+    if ([langToSet isEqualToString:current]) {
+        NSLog(@"the selected language is the same with the current.");
+        
+        return ;
+    }
+    
+    // force NSLocalizedString to use a specific language to have the app in a different language than the device
+    // 这个需要重启App才能看到效果，没有在应用内即时刷新
+    [userDefaults setObject:@[langToSet] forKey:@"AppleLanguages"];
+    [userDefaults synchronize];
+    blockShowCurrLang();
+    
+//    // 退回去，再进来，重新加载资源
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
