@@ -9,7 +9,7 @@
 
 @implementation Language
 
-static NSBundle *bundle = nil;
+static NSBundle *bundle = nil;  // 需要定义一个NSBundle变量；从此bundle中获得本地化的字符串；切换语言的时候换成对应语言“.lproj”目录的bundle，重新加载UI；
 
 NSString *const LanguageCodeIdIndentifier = @"LanguageCodeIdIndentifier";
 

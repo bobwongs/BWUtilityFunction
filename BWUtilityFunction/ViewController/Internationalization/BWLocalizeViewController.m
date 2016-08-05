@@ -82,6 +82,12 @@
         应用内语言切换
         语言
             en、zh-Hans
+        Reference目录提供参考
+        实现方法
+            定义NSBundle，路径为当前语言的“.lproj”文件目录；
+            切换语言时，创建指向新语言路径的NSBundle替换旧的；
+        代码
+            待完善应用内语言切换的功能；
      ======================*/
     UIButton *btnSelectLang = [UIButton buttonWithType:UIButtonTypeSystem];
     [btnSelectLang setTitle:NSLocalizedString(@"选择", nil) forState:UIControlStateNormal];

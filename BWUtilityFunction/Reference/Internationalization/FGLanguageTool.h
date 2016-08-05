@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define FGGetStringWithKeyFromTable(key, tbl)
+#define FGGetStringWithKeyFromTable(key, tbl) \
 [[FGLanguageTool sharedInstance] getStringForKey:key withTable:tbl]
 
 @interface FGLanguageTool : NSObject
