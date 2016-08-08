@@ -7,6 +7,7 @@
 //
 
 #import "BWHomeViewController.h"
+#import "BWLocalizeViewController.h"
 
 @interface BWHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     NSArray *_dataSource;
@@ -54,6 +55,17 @@
 {
     UIViewController *vc = segue.destinationViewController;
     vc.view.backgroundColor = [UIColor whiteColor];
+    
+    if ([vc isKindOfClass:[BWLocalizeViewController class]]) {
+        BWLocalizeViewController *vcLocalize = (BWLocalizeViewController *)vc;
+        vcLocalize.blockResetVC = ^ {
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"push_to_internationalization" sender:self];
+            });
+        };
+    }
 }
 
 @end

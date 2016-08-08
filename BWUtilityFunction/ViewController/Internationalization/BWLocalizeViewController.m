@@ -8,6 +8,7 @@
 
 #import "BWLocalizeViewController.h"
 #import "BWLocalizeView.h"
+#import "BWLanguageManager.h"
 
 #define kTitleCN BWLocalizedString(@"中文")
 #define kTitleEN BWLocalizedString(@"英文")
@@ -29,6 +30,15 @@
 
 - (void)setUI {
     /*================
+        iOS系统语言环境判断
+    ================*/
+    if ([BWLanguageManager isSimpleChinese]) {
+        NSLog(@"the current language is Simple Chinese!");
+    } else {
+        NSLog(@"the current language is not Simple Chinese!");
+    }
+    
+    /*================
         文本国际化
         通过一个Localizable.strings文件来存储每个语言的文本，它是iOS默认加载的文件，如果想用自定义名称命名，在使用NSLocalizedString方法时指定tableName为自定义名称就好了，此宏定义方法有指定tableName来获得对应.strings文件中的语言文本，tableName即为.strings的文件名，但你的应用规模不是很大就不要分模块搞特殊了；
          每一套语言新建一份strings，其内容采用"key" = "value";的格式，注意有;号；
@@ -37,7 +47,7 @@
     NSString *keyLabel0 = @"发现";
     UILabel *label0 = [[UILabel alloc] init];
     label0.textAlignment = NSTextAlignmentCenter;
-    label0.text = NSLocalizedString(keyLabel0, nil);
+    label0.text = BWLocalizedString(keyLabel0);
     [self.view addSubview:label0];
     
     [label0 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,6 +78,7 @@
                     python AutoGenStrings.py BWUtilityFunction/ViewController/Internationalization/Xib
      ================*/
     BWLocalizeView *viewLocalize = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BWLocalizeView class]) owner:self options:nil].firstObject;
+    viewLocalize.backgroundColor = [UIColor greenColor];
     [self.view addSubview:viewLocalize];
     
     [viewLocalize mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +101,7 @@
             待完善应用内语言切换的功能；
      ======================*/
     UIButton *btnSelectLang = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btnSelectLang setTitle:NSLocalizedString(@"选择", nil) forState:UIControlStateNormal];
+    [btnSelectLang setTitle:BWLocalizedString(@"选择") forState:UIControlStateNormal];
     [btnSelectLang addTarget:self action:@selector(btnActSelectLang:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnSelectLang];
     
@@ -102,7 +113,7 @@
 }
 
 - (void)btnActSelectLang:(UIButton *)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"语言选择", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"取消", nil) destructiveButtonTitle:nil otherButtonTitles:kTitleCN, kTitleEN, nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:BWLocalizedString(@"语言选择") delegate:self cancelButtonTitle:BWLocalizedString(@"取消") destructiveButtonTitle:nil otherButtonTitles:kTitleCN, kTitleEN, nil];
     [actionSheet showInView:self.view];
 }
 
@@ -112,24 +123,21 @@
         return ;
     }
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     void (^blockShowCurrLang)() = ^ {
-        NSArray *languages = [userDefaults objectForKey:@"AppleLanguages"];
-        NSString *current = languages.firstObject;
-        NSLog(@"current languages is %@", current);
+        NSLog(@"current languages is %@", [NSLocale preferredLanguages]);
     };
     blockShowCurrLang();
     
-    NSArray *languages = [userDefaults objectForKey:@"AppleLanguages"];
+    NSArray *languages = [NSLocale preferredLanguages];
     NSString *current = languages.firstObject;
     NSString *langToSet;
     
     
     if ([title isEqualToString:kTitleCN]) {
-        langToSet = @"zh-Hans";
+        langToSet = kCN;
     }
     else if ([title isEqualToString:kTitleEN]) {
-        langToSet = @"en";
+        langToSet = kEN;
     }
     
     if ([langToSet isEqualToString:current]) {
@@ -138,11 +146,32 @@
         return ;
     }
     
-    // force NSLocalizedString to use a specific language to have the app in a different language than the device
-    // 这个需要重启App才能看到效果，没有在应用内即时刷新
-    [userDefaults setObject:@[langToSet] forKey:@"AppleLanguages"];
-    [userDefaults synchronize];
-    blockShowCurrLang();
+    BWLanguageSharedManager.language = langToSet;
+    _blockResetVC();
+    
+    /*
+    UINavigationController *nvgtVC = self.navigationController;
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        Class class = [self class];
+//        id vc = [[class alloc] init];
+//        [self.navigationController pushViewController:vc animated:YES];   此时不能用self.navigationController，因为self已经从控制器堆栈中pop出来了，其导航控制器此时为空，需要注意
+        
+        BWLocalizeViewController *vc = [[BWLocalizeViewController alloc] init];
+        [nvgtVC pushViewController:vc animated:YES];
+    });
+     */
+    
+    
+    /*====================
+     Force NSLocalizedString to use a specific language to have the app in a different language than the device
+     这个需要重启App才能看到效果，没有在应用内即时刷新，重启后[NSBundle mainBundle]会指向对应的语言资源，不用在系统中修改
+     强烈建议不使用此方式，因为代码强制修改了AppleLanguages，如果再次修改系统的语言，此时从这个应用中获得的AppleLanguages不会随着系统语言修改而做改变，AppleLanguages的值仍然是手动修改后的值，获取不了系统的语言配置
+     ===================*/
+//    [userDefaults setObject:@[langToSet] forKey:@"AppleLanguages"];
+//    [userDefaults synchronize];
+//    blockShowCurrLang();
     
 //    // 退回去，再进来，重新加载资源
 //    [self.navigationController popViewControllerAnimated:YES];

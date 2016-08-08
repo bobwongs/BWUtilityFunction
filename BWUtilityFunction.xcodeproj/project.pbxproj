@@ -27,6 +27,7 @@
 		B45C5BB91D51DA37006BD33A /* BWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BB81D51DA37006BD33A /* BWHomeViewController.m */; };
 		B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */; };
 		B47CC0911D51E8A50062C107 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B47CC0931D51E8A50062C107 /* Localizable.strings */; };
+		B4DC21CE1D58872800721BE4 /* NSBundle+BWExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DC21CD1D58872800721BE4 /* NSBundle+BWExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		B47CC08C1D51E5480062C107 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B47CC0941D51E8A80062C107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B47CC0951D51E8A90062C107 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B4DC21CC1D58872800721BE4 /* NSBundle+BWExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+BWExtension.h"; sourceTree = "<group>"; };
+		B4DC21CD1D58872800721BE4 /* NSBundle+BWExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+BWExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 				B45C5BAD1D51D99A006BD33A /* ViewController */,
 				B45998FF1D5322DE0047B58A /* Utility */,
 				B45C5BAA1D51D99A006BD33A /* Resource */,
+				B4DC21CB1D58870C00721BE4 /* Category */,
 				B45999131D535DF70047B58A /* Reference */,
 				212F51C91D40AD51001CBA91 /* Assets.xcassets */,
 				212F51BD1D40AD51001CBA91 /* Supporting Files */,
@@ -314,6 +318,15 @@
 				B47CC0931D51E8A50062C107 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		B4DC21CB1D58870C00721BE4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B4DC21CC1D58872800721BE4 /* NSBundle+BWExtension.h */,
+				B4DC21CD1D58872800721BE4 /* NSBundle+BWExtension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +523,7 @@
 				B459991A1D535E510047B58A /* FGLanguageTool.m in Sources */,
 				B45999031D5322F70047B58A /* BWLanguageManager.m in Sources */,
 				B45C5BBC1D51DA69006BD33A /* BWLocalizeViewController.m in Sources */,
+				B4DC21CE1D58872800721BE4 /* NSBundle+BWExtension.m in Sources */,
 				B45998F81D52E8890047B58A /* BWLocalizeView.m in Sources */,
 				B45C5BB61D51DA27006BD33A /* BWBaseViewController.m in Sources */,
 			);

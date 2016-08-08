@@ -10,4 +10,6 @@
 
 @interface BWLocalizeViewController : BWBaseViewController
 
+@property (nonatomic, copy) dispatch_block_t blockResetVC;  //!< 切换语言，重置VC
+
 @end

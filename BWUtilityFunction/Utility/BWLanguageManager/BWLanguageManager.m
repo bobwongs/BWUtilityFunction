@@ -8,9 +8,66 @@
 
 #import "BWLanguageManager.h"
 
+#define NSStandardUserDefaults [NSUserDefaults standardUserDefaults]
+
+NSString *const kAppLanguage = @"kAppLanguage";
+NSString *const kEN = @"en";
+NSString *const kCN = @"zh-Hans";
+
+@interface BWLanguageManager ()
+
+@property (nonatomic, strong) NSBundle *bundle;  //!< Bundle of Language
+
+@end
+
 @implementation BWLanguageManager
 
 NSString *const kTextUnknownError = @"未知错误!";
+
++ (instancetype)sharedManager
+{
+    static dispatch_once_t onceToken;
+    static BWLanguageManager *_sharedManager = nil;
+    dispatch_once(&onceToken, ^{
+        _sharedManager = [[self alloc] init];
+        
+        NSString *language = [NSStandardUserDefaults objectForKey:kAppLanguage];
+        if (!language || language.length == 0) {
+            // 跟随系统语言
+            NSString *languageSystem = [[NSLocale preferredLanguages] firstObject];
+            if ([languageSystem containsString:kEN]) {
+                language = kEN;
+            }
+            else if ([languageSystem containsString:kCN]) {
+                language = kCN;
+            }
+        }
+        _sharedManager.language = language;
+    });
+    return _sharedManager;
+}
+
+- (void)setLanguage:(NSString *)language
+{
+    if (!language || language.length == 0) {
+        return ;
+    }
+    
+    _language = language;
+    [NSStandardUserDefaults setObject:_language forKey:kAppLanguage];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:_language ofType:@"lproj"];
+    _bundle = [NSBundle bundleWithPath:path];
+}
+
+- (NSString *)localizedStringWithKey:(NSString *)key
+{
+    if (!_bundle) {
+        return @"";
+    }
+    
+    return [_bundle localizedStringForKey:key value:nil table:nil];
+}
 
 + (BOOL)isSimpleChinese
 {
