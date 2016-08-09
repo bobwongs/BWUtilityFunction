@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageView+BWExtension.h"
 
 @interface BWLocalizeView : UIView
 

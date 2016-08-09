@@ -23,6 +23,10 @@ static const char kBundleKey = 0;
     objc_setAssociatedObject([NSBundle mainBundle], &kBundleKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
++ (NSBundle *)getLanguageBundle {
+    return objc_getAssociatedObject([NSBundle mainBundle], &kBundleKey);
+}
+
 @end
 
 @implementation BundleEx

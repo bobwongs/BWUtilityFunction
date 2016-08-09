@@ -16,4 +16,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
+- (void)dealloc {
+    NSLog(@"%@ vc object has been deallocd", NSStringFromClass([self class]));
+}
+
 @end

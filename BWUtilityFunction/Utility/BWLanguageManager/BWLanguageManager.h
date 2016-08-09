@@ -12,7 +12,7 @@ extern NSString *const kEN;
 extern NSString *const kCN;
 
 #define BWLanguageSharedManager [BWLanguageManager sharedManager]
-#define BWLocalizedString(key) [[BWLanguageManager sharedManager] localizedStringWithKey:key]
+#define BWLocalize(key) [[BWLanguageManager sharedManager] localizedStringWithKey:key]
 
 @interface BWLanguageManager : NSObject
 

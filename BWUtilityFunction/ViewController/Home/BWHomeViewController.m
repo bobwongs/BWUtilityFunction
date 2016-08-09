@@ -8,6 +8,7 @@
 
 #import "BWHomeViewController.h"
 #import "BWLocalizeViewController.h"
+#import "AppDelegate.h"
 
 @interface BWHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     NSArray *_dataSource;
@@ -24,7 +25,8 @@
     
     self.title = @"Utility Function";
     
-    _dataSource = @[@"Internationalization"];
+    _dataSource = @[BWLocalize(@"国际化")];
+    self.navigationController.tabBarItem.title = BWLocalize(@"主页");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -59,10 +61,15 @@
     if ([vc isKindOfClass:[BWLocalizeViewController class]]) {
         BWLocalizeViewController *vcLocalize = (BWLocalizeViewController *)vc;
         vcLocalize.blockResetVC = ^ {
-            [self.navigationController popViewControllerAnimated:YES];
+            AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+            NSString *storyboardName = @"Main";
+            UIStoryboard *storybaord = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+            UITabBarController *vcRoot = [storybaord instantiateInitialViewController];
+            delegate.window.rootViewController = vcRoot;
             
+            UINavigationController *nvgtVCFirst = vcRoot.viewControllers.firstObject;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self performSegueWithIdentifier:@"push_to_internationalization" sender:self];
+                [nvgtVCFirst.viewControllers.firstObject performSegueWithIdentifier:@"push_to_internationalization" sender:self];
             });
         };
     }

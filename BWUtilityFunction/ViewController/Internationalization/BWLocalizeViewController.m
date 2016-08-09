@@ -9,10 +9,11 @@
 #import "BWLocalizeViewController.h"
 #import "BWLocalizeView.h"
 #import "BWLanguageManager.h"
+#import "UIImageView+BWExtension.h"
 
-#define kTitleCN BWLocalizedString(@"中文")
-#define kTitleEN BWLocalizedString(@"英文")
-#define kTitleCancel BWLocalizedString(@"取消")
+#define kTitleCN BWLocalize(@"中文")
+#define kTitleEN BWLocalize(@"英文")
+#define kTitleCancel BWLocalize(@"取消")
 
 @interface BWLocalizeViewController () <UIActionSheetDelegate>
 
@@ -47,7 +48,7 @@
     NSString *keyLabel0 = @"发现";
     UILabel *label0 = [[UILabel alloc] init];
     label0.textAlignment = NSTextAlignmentCenter;
-    label0.text = BWLocalizedString(keyLabel0);
+    label0.text = BWLocalize(keyLabel0);
     [self.view addSubview:label0];
     
     [label0 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -61,7 +62,8 @@
         方式二：原生支持，Base副本去掉。另外需要注意的是，使用这种方式，在XIB或Storyboard中引用图片时如果只使用名称是实时显示不了的，一定要加上后缀名。如image.png
         以下为方式二
      ================*/
-    UIImageView * imageView0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image0"]];
+    UIImageView * imageView0 = [[UIImageView alloc] init];
+    imageView0.localizedImageName = @"image0";
     [self.view addSubview:imageView0];
     [imageView0 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.mas_centerX);
@@ -81,11 +83,12 @@
     viewLocalize.backgroundColor = [UIColor greenColor];
     [self.view addSubview:viewLocalize];
     
+    CGFloat height = CGRectGetHeight(viewLocalize.frame);
     [viewLocalize mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
         make.top.mas_equalTo(imageView0.mas_bottom).offset(10);
-        make.height.mas_equalTo(150);
+        make.height.mas_equalTo(height);
     }];
     
     
@@ -97,11 +100,9 @@
         实现方法
             定义NSBundle，路径为当前语言的“.lproj”文件目录；
             切换语言时，创建指向新语言路径的NSBundle替换旧的；
-        代码
-            待完善应用内语言切换的功能；
      ======================*/
     UIButton *btnSelectLang = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btnSelectLang setTitle:BWLocalizedString(@"选择") forState:UIControlStateNormal];
+    [btnSelectLang setTitle:BWLocalize(@"选择") forState:UIControlStateNormal];
     [btnSelectLang addTarget:self action:@selector(btnActSelectLang:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnSelectLang];
     
@@ -113,7 +114,7 @@
 }
 
 - (void)btnActSelectLang:(UIButton *)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:BWLocalizedString(@"语言选择") delegate:self cancelButtonTitle:BWLocalizedString(@"取消") destructiveButtonTitle:nil otherButtonTitles:kTitleCN, kTitleEN, nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:BWLocalize(@"语言选择") delegate:self cancelButtonTitle:BWLocalize(@"取消") destructiveButtonTitle:nil otherButtonTitles:kTitleCN, kTitleEN, nil];
     [actionSheet showInView:self.view];
 }
 

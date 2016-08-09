@@ -7,6 +7,7 @@
 //
 
 #import "BWLanguageManager.h"
+#import "NSBundle+BWExtension.h"
 
 #define NSStandardUserDefaults [NSUserDefaults standardUserDefaults]
 
@@ -33,7 +34,7 @@ NSString *const kTextUnknownError = @"未知错误!";
         
         NSString *language = [NSStandardUserDefaults objectForKey:kAppLanguage];
         if (!language || language.length == 0) {
-            // 跟随系统语言
+            // 如果App没有设置的语言，跟随系统语言
             NSString *languageSystem = [[NSLocale preferredLanguages] firstObject];
             if ([languageSystem containsString:kEN]) {
                 language = kEN;
@@ -56,23 +57,39 @@ NSString *const kTextUnknownError = @"未知错误!";
     _language = language;
     [NSStandardUserDefaults setObject:_language forKey:kAppLanguage];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:_language ofType:@"lproj"];
-    _bundle = [NSBundle bundleWithPath:path];
+    
+    /*================
+        手动管理自定义的NSBundle对象
+        弊端：Xib、Storyboard中的文本需要从代码中去编写，直接设置在对应本地化文件中的文本是不会随着指向新语言路径的_bundle的改变而改变
+    ================*/
+//    NSString *path = [[NSBundle mainBundle] pathForResource:_language ofType:@"lproj"];
+//    _bundle = [NSBundle bundleWithPath:path];
+    
+    
+    /*================
+        使用NSBundle的扩展
+        弊端
+            图片还是指向原来语言资源的文件
+            解决方法：扩展UIImageView，并且在User Defined Runtime Attributed做属性设置
+     ================*/
+    [NSBundle setLanguage:_language];
+    _bundle = [NSBundle getLanguageBundle];
 }
 
 - (NSString *)localizedStringWithKey:(NSString *)key
 {
-    if (!_bundle) {
-        return @"";
-    }
+//    if (!_bundle) {
+//        return @"";
+//    }
+//    return [_bundle localizedStringForKey:key value:nil table:nil];
     
-    return [_bundle localizedStringForKey:key value:nil table:nil];
+    return [[NSBundle mainBundle] localizedStringForKey:key value:nil table:nil];
 }
 
 + (BOOL)isSimpleChinese
 {
     NSString *language = [[NSLocale preferredLanguages] firstObject];
-    if ([language hasPrefix:@"zh-Hans"]) {
+    if ([language containsString:@"zh-Hans"]) {
         return 1;
     }
     else {

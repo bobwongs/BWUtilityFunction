@@ -11,6 +11,7 @@
 @interface NSBundle (BWExtension)
 
 + (void)setLanguage:(NSString *)language;
++ (NSBundle *)getLanguageBundle;
 
 @end
 
