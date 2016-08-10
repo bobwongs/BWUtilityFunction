@@ -2,7 +2,7 @@
 # BWUtilityFunction
 
 ## 国际化
----
+<hr/>
 ### Contents
 - 国际化需求
 	- 应用外语言切换
@@ -70,8 +70,7 @@ iOS App名字国际化步骤（实质为Info.plist文件的国际化）
 - 尽力避免使用Force NSLocalizedString
     <pre>
     [userDefaults setObject:@[languageToSet] forKey:@"AppleLanguages"];
-    [userDefaults synchronize];
-    </pre>
+    [userDefaults synchronize];  </pre>
 	- Force NSLocalizedString to use a specific language to have the app in a different language than the device;
 	- 这个需要重启App才能看到效果，没有在应用内即时刷新，重启后[NSBundle mainBundle]会指向对应的语言资源，不用在系统中修改；
 	- 强烈建议不使用此方式，因为代码强制修改了AppleLanguages，如果再次修改系统的语言，此时从这个应用中获得的AppleLanguages不会随着系统语言修改而做改变，AppleLanguages的值仍然是手动修改后的值，获取不了系统的语言配置；
@@ -91,11 +90,10 @@ btn.titleLabel.adjustsFontSizeToFitWidth = YES;
 ### Reference	 
 <http://www.cocoachina.com/ios/20151120/14258.html>  
 <https://github.com/maximbilan/ios_language_manager>
-
----
+<hr/>
 
 ## 开发经验总结
----
+<hr/>
 - UI搭建
 	- Storyboard感觉还是不够稳定，项目开发优先使用手写代码+Xib搭建界面的方式；
 - 脚本
@@ -117,5 +115,5 @@ btn.titleLabel.adjustsFontSizeToFitWidth = YES;
 	- Xcode中Assets.xcassets资源打包后是在包内容Assets.car；
     
 ### Follow Me
----
+<hr/>
 Github: <https://github.com/BobWongs>
