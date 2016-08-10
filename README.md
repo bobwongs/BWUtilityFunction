@@ -90,10 +90,8 @@ btn.titleLabel.adjustsFontSizeToFitWidth = YES;
 ### Reference	 
 <http://www.cocoachina.com/ios/20151120/14258.html>  
 <https://github.com/maximbilan/ios_language_manager>
-<hr/>
 
 ## 开发经验总结
-<hr/>
 - UI搭建
 	- Storyboard感觉还是不够稳定，项目开发优先使用手写代码+Xib搭建界面的方式；
 - 脚本
@@ -115,5 +113,4 @@ btn.titleLabel.adjustsFontSizeToFitWidth = YES;
 	- Xcode中Assets.xcassets资源打包后是在包内容Assets.car；
     
 ### Follow Me
-<hr/>
 Github: <https://github.com/BobWongs>
