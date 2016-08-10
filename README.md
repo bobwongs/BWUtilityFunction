@@ -2,7 +2,7 @@
 # BWUtilityFunction
 
 ## 国际化
-<hr/>
+
 ### Contents
 - 国际化需求
 	- 应用外语言切换
