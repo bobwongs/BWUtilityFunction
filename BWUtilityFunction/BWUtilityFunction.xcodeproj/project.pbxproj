@@ -92,7 +92,6 @@
 		B45C5BBA1D51DA69006BD33A /* BWLocalizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLocalizeViewController.h; sourceTree = "<group>"; };
 		B45C5BBB1D51DA69006BD33A /* BWLocalizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLocalizeViewController.m; sourceTree = "<group>"; };
 		B47CC08B1D51E3700062C107 /* BWUtilityFunction.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BWUtilityFunction.pch; sourceTree = "<group>"; };
-		B47CC08C1D51E5480062C107 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B47CC0941D51E8A80062C107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B47CC0951D51E8A90062C107 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B4DC21CC1D58872800721BE4 /* NSBundle+BWExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+BWExtension.h"; sourceTree = "<group>"; };
@@ -150,7 +149,6 @@
 		212F51BC1D40AD51001CBA91 /* BWUtilityFunction */ = {
 			isa = PBXGroup;
 			children = (
-				B47CC08C1D51E5480062C107 /* README.md */,
 				212F51C01D40AD51001CBA91 /* AppDelegate.h */,
 				212F51C11D40AD51001CBA91 /* AppDelegate.m */,
 				212F51C61D40AD51001CBA91 /* Main.storyboard */,
